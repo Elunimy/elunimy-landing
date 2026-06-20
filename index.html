@@ -91,12 +91,13 @@
       letter-spacing: -0.02em;
       color: var(--ink);
     }
-    .nav__link {
-      font-size: 14px;
-      font-weight: 500;
+    .nav__tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       color: var(--muted);
     }
-    .nav__link:hover { color: var(--ink-2); }
 
     /* ---------- Hero ---------- */
     main { flex: 1 0 auto; }
@@ -108,21 +109,16 @@
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 7px 14px;
+      padding: 7px 15px;
       border: 1px solid var(--border);
       background: var(--card);
       border-radius: 30px;
-      font-size: 13px;
-      font-weight: 550;
-      letter-spacing: 0.01em;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       color: var(--ink-2);
       box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
-    }
-    .eyebrow .dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.16);
     }
     .hero h1 {
       margin: 26px 0 0;
@@ -138,6 +134,7 @@
       font-size: clamp(17px, 2.4vw, 20px);
       line-height: 1.55;
       color: var(--body);
+      text-wrap: balance;
     }
 
     /* ---------- Waitlist form ---------- */
@@ -340,8 +337,8 @@
 
     /* ---------- Responsive ---------- */
     @media (max-width: 560px) {
-      .row { flex-direction: column; }
-      .btn { width: 100%; }
+      .row { flex-direction: column; gap: 12px; }
+      .btn { width: auto; align-self: center; padding: 0 40px; }
       .mock-grid { grid-template-columns: 1fr; }
       .foot { justify-content: center; text-align: center; }
     }
@@ -355,13 +352,13 @@
   <header>
     <div class="wrap nav">
       <span class="wordmark">Elunimy</span>
-      <a class="nav__link" href="https://legal.elunimy.com/privacy-policy.html">Privacy</a>
+      <span class="nav__tag">Coming soon</span>
     </div>
   </header>
 
   <main>
     <section class="wrap hero">
-      <span class="eyebrow"><span class="dot"></span>Private beta — coming soon</span>
+      <span class="eyebrow">Private beta</span>
 
       <h1>Elunimy</h1>
 
