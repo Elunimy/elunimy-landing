@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Turn constant forgetting, endless searching, and noise into clarity, access, and ease — all in one place. What you've been looking for is right in front of you.">
+  <meta name="theme-color" content="#F8FAFC">
+  <title>Elunimy — Join the waitlist</title>
+
+  <!-- Open Graph / social preview (shown when the link is shared on X, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://join.elunimy.com">
+  <meta property="og:title" content="Elunimy">
+  <meta property="og:description" content="Turn constant forgetting, endless searching, and noise into clarity, access, and ease — all in one place.">
+  <!-- TODO: drop a 1200×630 PNG named og-image.png in the repo root to enable the preview image -->
+  <meta property="og:image" content="https://join.elunimy.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Elunimy">
+  <meta name="twitter:description" content="Turn constant forgetting, endless searching, and noise into clarity, access, and ease — all in one place.">
+  <meta name="twitter:image" content="https://join.elunimy.com/og-image.png">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="canonical" href="https://join.elunimy.com">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F8FAFC;
+      --card: #FFFFFF;
+      --soft: #F1F5F9;
+      --border: #E2E8F0;
+      --btn-border: #CBD5E1;
+      --ink: #0F0F0F;
+      --ink-2: #334155;
+      --body: #475569;
+      --muted: #64748B;
+      --faint: #94A3B8;
+      --blue: #1D4ED8;
+      --blue-hover: #1E40AF;
+      --green: #16A34A;
+      --red: #DC2626;
+      --dark: #0F0F0F;
+      --dark-top: #191919;
+      --dark-elev: #1A1A1A;
+      --dark-search: #0D0D0D;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--bg);
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      color: var(--body);
+      background:
+        radial-gradient(1200px 520px at 50% -8%, rgba(29, 78, 216, 0.06), transparent 70%),
+        var(--bg);
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { color: var(--blue-hover); }
+
+    .wrap {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      padding: 26px 0 0;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .wordmark {
+      font-size: 19px;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+    .nav__link {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+    .nav__link:hover { color: var(--ink-2); }
+
+    /* ---------- Hero ---------- */
+    main { flex: 1 0 auto; }
+
+    .hero {
+      text-align: center;
+      padding: clamp(56px, 12vw, 116px) 0 clamp(40px, 7vw, 72px);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 550;
+      letter-spacing: 0.01em;
+      color: var(--ink-2);
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    }
+    .eyebrow .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.16);
+    }
+    .hero h1 {
+      margin: 26px 0 0;
+      font-size: clamp(44px, 9vw, 78px);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .subtitle {
+      margin: 22px auto 0;
+      max-width: 600px;
+      font-size: clamp(17px, 2.4vw, 20px);
+      line-height: 1.55;
+      color: var(--body);
+    }
+
+    /* ---------- Waitlist form ---------- */
+    .form {
+      margin: 38px auto 0;
+      max-width: 540px;
+    }
+    .row {
+      display: flex;
+      gap: 10px;
+    }
+    .field {
+      flex: 1 1 auto;
+      height: 56px;
+      padding: 0 22px;
+      font-size: 16px;
+      color: var(--ink);
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: 30px;
+      outline: none;
+      transition: border-color 0.16s ease, box-shadow 0.16s ease;
+      width: 100%;
+    }
+    .field::placeholder { color: var(--faint); }
+    .field:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.12);
+    }
+    .btn {
+      flex: 0 0 auto;
+      height: 56px;
+      padding: 0 28px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      background: var(--blue);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 0.16s ease, transform 0.04s ease, opacity 0.16s ease;
+    }
+    .btn:hover { background: var(--blue-hover); }
+    .btn:active { transform: scale(0.985); }
+    .btn:disabled { opacity: 0.6; cursor: default; }
+
+    .consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 16px 4px 0;
+      text-align: left;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .consent input {
+      flex: 0 0 auto;
+      margin-top: 1px;
+      width: 16px; height: 16px;
+      accent-color: var(--blue);
+      cursor: pointer;
+    }
+    .consent label { cursor: pointer; }
+
+    .status {
+      min-height: 20px;
+      margin: 14px 4px 0;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: left;
+    }
+    .status--error { color: var(--red); }
+    .status--ok { color: var(--green); }
+
+    .microcopy {
+      margin: 16px 0 0;
+      font-size: 13px;
+      color: var(--faint);
+    }
+
+    /* honeypot — invisible to humans, catches naive bots */
+    .hp {
+      position: absolute;
+      left: -9999px;
+      width: 1px; height: 1px;
+      overflow: hidden;
+    }
+
+    /* ---------- Success state ---------- */
+    .success {
+      margin: 38px auto 0;
+      max-width: 540px;
+      padding: 30px 26px;
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: 22px;
+      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+      text-align: center;
+    }
+    .success__check {
+      width: 46px; height: 46px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      background: rgba(22, 163, 74, 0.1);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .success h2 {
+      font-size: 20px;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+    .success p {
+      margin: 8px 0 0;
+      font-size: 15px;
+      color: var(--body);
+    }
+
+    /* ---------- Product preview (placeholder for a screenshot) ---------- */
+    .preview {
+      padding: 8px 0 clamp(56px, 9vw, 96px);
+    }
+    .window {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: clamp(16px, 3vw, 26px);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      box-shadow: 0 30px 70px -30px rgba(15, 23, 42, 0.28);
+    }
+    .mock-search {
+      display: flex; align-items: center; gap: 12px;
+      height: 52px;
+      padding: 0 20px;
+      background: var(--dark-search);
+      border: 1.5px solid #ffffff;
+      border-radius: 28px;
+    }
+    .mock-search svg { flex: 0 0 auto; opacity: 0.55; }
+    .mock-search .ph {
+      height: 9px; width: 150px; border-radius: 6px;
+      background: rgba(255, 255, 255, 0.16);
+    }
+    .mock-grid {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .mock-card {
+      padding: 18px;
+      min-height: 104px;
+      background: linear-gradient(180deg, var(--dark-top), var(--dark));
+      border: 1.5px solid #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+    .bar { height: 9px; border-radius: 6px; background: rgba(255, 255, 255, 0.14); }
+    .bar.s { background: rgba(255, 255, 255, 0.09); }
+    .w90 { width: 90%; } .w70 { width: 70%; } .w55 { width: 55%; } .w40 { width: 40%; }
+    .badge {
+      width: 46px; height: 18px; border-radius: 30px;
+      background: rgba(29, 78, 216, 0.22);
+      border: 1px solid rgba(96, 130, 240, 0.5);
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      flex-shrink: 0;
+      border-top: 1px solid var(--border);
+      padding: 26px 0;
+    }
+    .foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .foot__links { display: flex; gap: 20px; }
+    .foot__links a { color: var(--muted); font-weight: 500; }
+    .foot__links a:hover { color: var(--ink-2); }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 560px) {
+      .row { flex-direction: column; }
+      .btn { width: 100%; }
+      .mock-grid { grid-template-columns: 1fr; }
+      .foot { justify-content: center; text-align: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap nav">
+      <span class="wordmark">Elunimy</span>
+      <a class="nav__link" href="https://legal.elunimy.com/privacy-policy.html">Privacy</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero">
+      <span class="eyebrow"><span class="dot"></span>Private beta — coming soon</span>
+
+      <h1>Elunimy</h1>
+
+      <p class="subtitle">
+        Turn constant forgetting, endless searching, and noise into clarity, access,
+        and ease — all in one place. What you've been looking for is right in front of you.
+      </p>
+
+      <!-- Waitlist form -->
+      <form class="form" id="waitlist-form" novalidate>
+        <div class="row">
+          <input
+            class="field"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            inputmode="email"
+            required
+            aria-label="Email address">
+          <button class="btn" type="submit" id="submit" data-label="Join the waitlist">Join the waitlist</button>
+        </div>
+
+        <!-- honeypot: real users never see or fill this -->
+        <div class="hp" aria-hidden="true">
+          <label>Company<input type="text" id="company" name="company" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <div class="consent">
+          <input type="checkbox" id="consent" name="consent">
+          <label for="consent">
+            I agree to receive occasional email updates about Elunimy. No spam, unsubscribe
+            anytime. See our <a href="https://legal.elunimy.com/privacy-policy.html">Privacy Policy</a>.
+          </label>
+        </div>
+
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+        <p class="microcopy">One email when we open the doors. Nothing else.</p>
+      </form>
+
+      <!-- Success state (revealed after a successful submit) -->
+      <div class="success" id="success" hidden>
+        <div class="success__check" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12.5l4.2 4.2L19 7" stroke="#16A34A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h2>You're on the list.</h2>
+        <p id="success-line">We'll email you the moment Elunimy opens. Thanks for being early.</p>
+      </div>
+    </section>
+
+    <!-- Product preview — replace this mock with a real screenshot later -->
+    <section class="wrap preview">
+      <div class="window" aria-hidden="true">
+        <div class="mock-search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <circle cx="11" cy="11" r="7" stroke="#fff" stroke-width="2"/>
+            <path d="M20 20l-3.2-3.2" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="ph"></span>
+        </div>
+        <div class="mock-grid">
+          <div class="mock-card"><span class="badge"></span><span class="bar w90"></span><span class="bar s w55"></span></div>
+          <div class="mock-card"><span class="badge"></span><span class="bar w70"></span><span class="bar s w40"></span></div>
+          <div class="mock-card"><span class="badge"></span><span class="bar w55"></span><span class="bar s w70"></span></div>
+          <div class="mock-card"><span class="badge"></span><span class="bar w90"></span><span class="bar s w40"></span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <span>© 2026 Elunimy</span>
+      <span class="foot__links">
+        <a href="https://legal.elunimy.com/privacy-policy.html">Privacy Policy</a>
+        <a href="https://legal.elunimy.com/terms-and-conditions.html">Terms</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
