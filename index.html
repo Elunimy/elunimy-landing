@@ -129,20 +129,27 @@
       color: var(--ink);
     }
     .subtitle {
-      margin: 22px auto 0;
+      margin: 20px auto 0;
       max-width: 600px;
       font-size: clamp(17px, 2.4vw, 20px);
-      line-height: 1.55;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
       color: var(--body);
       text-wrap: balance;
     }
     .subhint {
-      margin: 14px auto 0;
-      max-width: 540px;
+      margin: 16px auto 0;
+      max-width: 520px;
       font-size: clamp(14px, 2vw, 16px);
-      line-height: 1.5;
+      line-height: 1.4;
       color: var(--muted);
       text-wrap: balance;
+    }
+    /* manual, evenly-tuned line breaks on desktop; balanced auto-wrap on mobile */
+    .brk { display: none; }
+    @media (min-width: 561px) {
+      .brk { display: inline; }
+      .subtitle, .subhint { text-wrap: normal; }
     }
 
     /* ---------- Waitlist form ---------- */
@@ -193,17 +200,19 @@
     .consent {
       display: flex;
       align-items: flex-start;
-      gap: 10px;
+      gap: 9px;
       margin: 16px 4px 0;
       text-align: left;
-      font-size: 13px;
-      line-height: 1.5;
-      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+      color: var(--faint);
     }
+    .consent a { color: var(--muted); text-decoration: underline; }
+    .consent a:hover { color: var(--ink-2); }
     .consent input {
       flex: 0 0 auto;
       margin-top: 1px;
-      width: 16px; height: 16px;
+      width: 15px; height: 15px;
       accent-color: var(--blue);
       cursor: pointer;
     }
@@ -372,12 +381,13 @@
       <h1>Elunimy</h1>
 
       <p class="subtitle">
-        Turn constant forgetting, endless searching, and noise into clarity, access,
-        and ease — all in one place. What you've been looking for is right in front of you.
+        Turn constant forgetting, endless searching, and noise <br class="brk">into
+        clarity, access, and ease — all in one place. <br class="brk">What you've been
+        looking for is right in front of you.
       </p>
 
       <p class="subhint">
-        Save notes, links, and files — then find any of them by meaning,
+        Save notes, links, and files — then find any of them <br class="brk">by meaning,
         even when you forget the exact words.
       </p>
 
