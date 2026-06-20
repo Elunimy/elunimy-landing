@@ -35,6 +35,7 @@
       successLine.textContent = "You're already on the list — we'll email you the moment Elunimy opens.";
     }
     successView.hidden = false;
+    successView.classList.add('show');
     successView.scrollIntoView({ block: 'center', behavior: 'smooth' });
   }
 
