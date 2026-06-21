@@ -101,3 +101,43 @@
     }
   });
 })();
+
+/* Capabilities — interactive segmented pillars (Save / Edit / Find). */
+(function () {
+  'use strict';
+  var COPIES = [
+    'Everything worth keeping, in one quiet place.',
+    'Open it, change it, make it yours — anytime.',
+    'Ask in your own words. Find it, even years later.',
+  ];
+  var btns = Array.prototype.slice.call(document.querySelectorAll('.seg__btn'));
+  var copyEl = document.getElementById('pillar-copy');
+  if (!btns.length || !copyEl) return;
+
+  function select(i) {
+    btns.forEach(function (b, j) {
+      var on = j === i;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    copyEl.classList.add('is-anim');
+    setTimeout(function () {
+      copyEl.textContent = COPIES[i];
+      copyEl.classList.remove('is-anim');
+    }, 150);
+  }
+
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () { select(parseInt(b.dataset.i, 10)); });
+    b.addEventListener('keydown', function (e) {
+      var i = parseInt(b.dataset.i, 10);
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        var n = (i + 1) % btns.length; btns[n].focus(); select(n);
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        var p = (i - 1 + btns.length) % btns.length; btns[p].focus(); select(p);
+      }
+    });
+  });
+})();
