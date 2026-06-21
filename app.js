@@ -106,9 +106,9 @@
 (function () {
   'use strict';
   var COPIES = [
-    'Everything worth keeping, in one quiet place.',
-    'Open it, change it, make it yours — anytime.',
-    'Ask in your own words. Find it, even years later.',
+    'Notes, links, and files — kept in one place.',
+    'Open and edit anything, anytime.',
+    'Find it by meaning — even when you forget the words.',
   ];
   var btns = Array.prototype.slice.call(document.querySelectorAll('.seg__btn'));
   var copyEl = document.getElementById('pillar-copy');

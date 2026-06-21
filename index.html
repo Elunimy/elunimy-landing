@@ -128,28 +128,49 @@
       font-weight: 700;
       color: var(--ink);
     }
-    .subtitle {
-      margin: 20px auto 0;
-      max-width: 600px;
-      font-size: clamp(17px, 2.4vw, 20px);
-      line-height: 1.4;
-      letter-spacing: -0.01em;
+    /* ---------- Details — fuller description below the form ---------- */
+    .details {
+      max-width: 580px;
+      margin: 0 auto;
+      padding: clamp(44px, 7vw, 76px) 0 clamp(56px, 9vw, 96px);
+      text-align: left;
+    }
+    .details__title {
+      font-size: clamp(21px, 3vw, 27px);
+      font-weight: 650;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      color: var(--ink);
+    }
+    .details__lead {
+      margin: 16px 0 0;
+      font-size: clamp(15px, 2vw, 17px);
+      line-height: 1.6;
       color: var(--body);
-      text-wrap: balance;
     }
-    .subhint {
-      margin: 16px auto 0;
-      max-width: 520px;
+    .details__list {
+      margin: 26px 0 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+    .details__list li {
+      position: relative;
+      padding-left: 22px;
       font-size: clamp(14px, 2vw, 16px);
-      line-height: 1.4;
-      color: var(--muted);
-      text-wrap: balance;
+      line-height: 1.5;
+      color: var(--body);
     }
-    /* manual, evenly-tuned line breaks on desktop; balanced auto-wrap on mobile */
-    .brk { display: none; }
-    @media (min-width: 561px) {
-      .brk { display: inline; }
-      .subtitle, .subhint { text-wrap: normal; }
+    .details__list li::before {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blue);
     }
 
     /* ---------- Waitlist form ---------- */
@@ -281,9 +302,9 @@
       color: var(--body);
     }
 
-    /* ---------- Capabilities — interactive segmented pillars ---------- */
+    /* ---------- Capabilities — interactive segmented pillars (in hero) ---------- */
     .pillars {
-      padding: 4px 0 clamp(56px, 9vw, 96px);
+      margin: 26px 0 0;
       text-align: center;
     }
     .seg {
@@ -377,15 +398,14 @@
 
       <h1>Elunimy</h1>
 
-      <p class="subtitle">
-        Turn forgetting, searching, and noise <br class="brk">into clarity —
-        your personal search base.
-      </p>
-
-      <p class="subhint">
-        Save notes, links, and files — then find any of them <br class="brk">by meaning,
-        even when you forget the exact words.
-      </p>
+      <div class="pillars">
+        <div class="seg" role="tablist" aria-label="What Elunimy does">
+          <button class="seg__btn" type="button" role="tab" aria-selected="false" data-i="0">Save</button>
+          <button class="seg__btn" type="button" role="tab" aria-selected="false" data-i="1">Edit</button>
+          <button class="seg__btn is-active" type="button" role="tab" aria-selected="true" data-i="2">Find</button>
+        </div>
+        <p class="pillars__copy" id="pillar-copy" aria-live="polite">Find it by meaning — even when you forget the words.</p>
+      </div>
 
       <!-- Waitlist form -->
       <form class="form" id="waitlist-form" novalidate>
@@ -432,14 +452,20 @@
       </div>
     </section>
 
-    <!-- Capabilities — interactive pillars (conveys the product in words, no internals) -->
-    <section class="wrap pillars">
-      <div class="seg" role="tablist" aria-label="What Elunimy does">
-        <button class="seg__btn" type="button" role="tab" aria-selected="false" data-i="0">Save</button>
-        <button class="seg__btn" type="button" role="tab" aria-selected="false" data-i="1">Edit</button>
-        <button class="seg__btn is-active" type="button" role="tab" aria-selected="true" data-i="2">Find</button>
-      </div>
-      <p class="pillars__copy" id="pillar-copy" aria-live="polite">Ask in your own words. Find it, even years later.</p>
+    <!-- Details — fuller description for those who scroll down -->
+    <section class="wrap details">
+      <h2 class="details__title">Your personal search base.</h2>
+      <p class="details__lead">
+        Turn forgetting, searching, and noise into clarity. Save notes, links, and files,
+        then find any of them by meaning — even when you forget the exact words.
+        What you saved is never more than a thought away.
+      </p>
+      <ul class="details__list">
+        <li>One home for everything you save — no more scattered tabs.</li>
+        <li>Search the way you think — by meaning, not exact keywords.</li>
+        <li>Nothing slips away — recall it weeks or years later.</li>
+        <li>No feeds, no noise — just your own knowledge.</li>
+      </ul>
     </section>
   </main>
 
