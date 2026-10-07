@@ -3,21 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Your personal search base — save notes, links, and files, then find any of them by meaning, even when you forget the exact words.">
-  <meta name="theme-color" content="#F8FAFC">
-  <title>Elunimy — Join the waitlist</title>
+  <meta name="description" content="Elunimy - your personal home for everything worth keeping. Save notes, links, documents and photos, then find any of them later by meaning. Available on iOS and Android.">
+  <meta name="theme-color" content="#0E0E10">
+  <title>Elunimy - Save anything. Find by meaning.</title>
 
-  <!-- Open Graph / social preview (shown when the link is shared on X, etc.) -->
+  <!-- Open Graph / social preview -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://join.elunimy.com">
   <meta property="og:title" content="Elunimy">
-  <meta property="og:description" content="Your personal search base — save, edit, and find everything you keep, by meaning.">
-  <!-- TODO: drop a 1200×630 PNG named og-image.png in the repo root to enable the preview image -->
-  <meta property="og:image" content="https://join.elunimy.com/og-image.png">
+  <meta property="og:description" content="Save anything, find it later by meaning. Available on iOS and Android.">
+  <meta property="og:image" content="https://join.elunimy.com/assets/icon.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Elunimy">
-  <meta name="twitter:description" content="Your personal search base — save, edit, and find everything you keep, by meaning.">
-  <meta name="twitter:image" content="https://join.elunimy.com/og-image.png">
+  <meta name="twitter:description" content="Save anything, find it later by meaning. Available on iOS and Android.">
+  <meta name="twitter:image" content="https://join.elunimy.com/assets/icon.png">
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="canonical" href="https://join.elunimy.com">
@@ -26,32 +25,15 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #F8FAFC;
-      --card: #FFFFFF;
-      --soft: #F1F5F9;
-      --border: #E2E8F0;
-      --btn-border: #CBD5E1;
-      --ink: #0F0F0F;
-      --ink-2: #334155;
-      --body: #475569;
-      --muted: #64748B;
-      --faint: #94A3B8;
-      --blue: #1D4ED8;
-      --blue-hover: #1E40AF;
-      --green: #16A34A;
-      --red: #DC2626;
-      --dark: #0F0F0F;
-      --dark-top: #191919;
-      --dark-elev: #1A1A1A;
-      --dark-search: #0D0D0D;
+      --bg: #0E0E10;
+      --ink: #F3F3F4;
+      --muted: #9B9B9F;
+      --body: #B6B6BC;
+      --faint: #6E6E73;
+      --hair: rgba(255, 255, 255, 0.10);
     }
 
-    html {
-      min-height: 100%;
-      background: var(--bg);
-      scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%;
-    }
+    html { min-height: 100%; -webkit-text-size-adjust: 100%; }
 
     body {
       min-height: 100vh;
@@ -60,429 +42,141 @@
       -moz-osx-font-smoothing: grayscale;
       color: var(--body);
       background:
-        radial-gradient(1200px 520px at 50% -8%, rgba(29, 78, 216, 0.06), transparent 70%),
+        radial-gradient(900px 520px at 50% -10%, rgba(255, 255, 255, 0.055), transparent 70%),
         var(--bg);
       display: flex;
       flex-direction: column;
-    }
-
-    a { color: var(--blue); text-decoration: none; }
-    a:hover { color: var(--blue-hover); }
-
-    .wrap {
-      width: 100%;
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ---------- Header ---------- */
-    header {
-      padding: 26px 0 0;
-    }
-    .nav {
-      display: flex;
       align-items: center;
-      justify-content: space-between;
-    }
-    .wordmark {
-      font-size: 19px;
-      font-weight: 650;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-    }
-    .nav__tag {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    /* ---------- Hero ---------- */
-    main { flex: 1 0 auto; }
-
-    .hero {
+      justify-content: center;
       text-align: center;
-      padding: clamp(56px, 12vw, 116px) 0 clamp(40px, 7vw, 72px);
+      padding: 48px 24px;
     }
-    .eyebrow {
-      display: inline-flex;
+
+    main {
+      width: 100%;
+      max-width: 540px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      padding: 7px 15px;
-      border: 1px solid var(--border);
-      background: var(--card);
-      border-radius: 30px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink-2);
-      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
     }
-    .hero h1 {
+
+    .icon {
+      width: 104px;
+      height: 104px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--hair);
+      display: block;
+    }
+
+    h1 {
       margin: 26px 0 0;
-      font-size: clamp(50px, 10vw, 88px);
-      line-height: 1.02;
-      letter-spacing: -0.045em;
+      font-size: 46px;
       font-weight: 700;
+      letter-spacing: -0.035em;
       color: var(--ink);
+      line-height: 1;
     }
-    /* ---------- Details — fuller description below the form ---------- */
-    .details {
-      max-width: 580px;
-      margin: 0 auto;
-      padding: clamp(44px, 7vw, 76px) 0 clamp(56px, 9vw, 96px);
-      text-align: left;
+
+    .tagline {
+      margin: 14px 0 0;
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: -0.01em;
     }
-    .details__title {
-      font-size: clamp(21px, 3vw, 27px);
-      font-weight: 650;
-      letter-spacing: -0.025em;
-      line-height: 1.2;
-      color: var(--ink);
-    }
-    .details__lead {
-      margin: 16px 0 0;
-      font-size: clamp(15px, 2vw, 17px);
+
+    .desc {
+      margin: 22px 0 0;
+      max-width: 460px;
+      font-size: 16px;
       line-height: 1.6;
       color: var(--body);
       text-wrap: balance;
     }
-    .details__list {
-      margin: 26px 0 0;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 13px;
-    }
-    .details__list li {
-      position: relative;
-      padding-left: 22px;
-      font-size: clamp(14px, 2vw, 16px);
-      line-height: 1.5;
-      color: var(--body);
-      text-wrap: balance;
-    }
-    .details__list li::before {
-      content: "";
-      position: absolute;
-      left: 2px;
-      top: 9px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--blue);
-    }
 
-    /* ---------- Waitlist form ---------- */
-    .form {
-      margin: 38px auto 0;
-      max-width: 540px;
-    }
-    .row {
+    .stores {
+      margin: 38px 0 0;
       display: flex;
-      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
     }
-    .field {
-      flex: 1 1 auto;
-      height: 56px;
-      padding: 0 22px;
-      font-size: 16px;
-      color: var(--ink);
-      background: var(--card);
-      border: 1.5px solid var(--border);
-      border-radius: 30px;
-      outline: none;
-      transition: border-color 0.16s ease, box-shadow 0.16s ease;
-      width: 100%;
+    .store {
+      display: inline-flex;
+      transition: opacity 120ms ease, transform 120ms ease;
     }
-    .field::placeholder { color: var(--faint); }
-    .field:focus {
-      border-color: var(--blue);
-      box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.12);
-    }
-    .btn {
-      flex: 0 0 auto;
-      height: 56px;
-      padding: 0 28px;
-      font-size: 16px;
-      font-weight: 600;
-      color: #fff;
-      background: var(--blue);
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: background-color 0.16s ease, transform 0.04s ease, opacity 0.16s ease;
-    }
-    .btn:hover { background: var(--blue-hover); }
-    .btn:active { transform: scale(0.985); }
-    .btn:disabled { opacity: 0.6; cursor: default; }
+    .store:hover { opacity: 0.88; }
+    .store:active { opacity: 0.7; transform: translateY(1px); }
+    .store:focus-visible { outline: 2px solid rgba(255,255,255,0.6); outline-offset: 4px; border-radius: 10px; }
 
-    .consent {
-      display: flex;
-      align-items: flex-start;
-      gap: 9px;
-      margin: 16px 4px 0;
-      text-align: left;
-      font-size: 12px;
-      line-height: 1.45;
-      color: var(--faint);
-    }
-    .consent a { color: var(--muted); text-decoration: underline; }
-    .consent a:hover { color: var(--ink-2); }
-    .consent input {
-      flex: 0 0 auto;
-      margin-top: 1px;
-      width: 15px; height: 15px;
-      accent-color: var(--blue);
-      cursor: pointer;
-    }
-    .consent label { cursor: pointer; }
+    .store--apple img { height: 54px; width: auto; display: block; }
+    .store--google img { height: 80px; width: auto; display: block; }
 
-    .status {
-      min-height: 20px;
-      margin: 14px 4px 0;
+    .support {
+      position: fixed;
+      top: 20px;
+      right: 22px;
       font-size: 14px;
       font-weight: 500;
-      text-align: left;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 6px 4px;
+      transition: color 120ms ease;
+      z-index: 10;
     }
-    .status--error { color: var(--red); }
-    .status--ok { color: var(--green); }
+    .support:hover { color: var(--ink); }
+    .support:focus-visible { outline: 2px solid rgba(255,255,255,0.6); outline-offset: 3px; border-radius: 8px; }
 
-    .microcopy {
-      margin: 16px 0 0;
+    footer {
+      margin: 44px 0 0;
       font-size: 13px;
       color: var(--faint);
     }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+    .dot { margin: 0 8px; color: var(--faint); }
 
-    /* honeypot — invisible to humans, catches naive bots */
-    .hp {
-      position: absolute;
-      left: -9999px;
-      width: 1px; height: 1px;
-      overflow: hidden;
-    }
-
-    /* ---------- Success state ---------- */
-    .success {
-      margin: 38px auto 0;
-      max-width: 540px;
-      padding: 30px 26px;
-      background: var(--card);
-      border: 1.5px solid var(--border);
-      border-radius: 22px;
-      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
-      text-align: center;
-    }
-    .success__check {
-      width: 64px; height: 64px;
-      margin: 0 auto 18px;
-      border-radius: 50%;
-      background: var(--blue);
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 6px 18px rgba(29, 78, 216, 0.28);
-    }
-    .success.show .success__check {
-      animation: pop 0.55s cubic-bezier(0.18, 1.25, 0.4, 1) both;
-    }
-    @keyframes pop {
-      0%   { transform: scale(0); opacity: 0; }
-      60%  { transform: scale(1.08); opacity: 1; }
-      100% { transform: scale(1); }
-    }
-    .success h2 {
-      font-size: 20px;
-      font-weight: 650;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-    }
-    .success p {
-      margin: 8px 0 0;
-      font-size: 15px;
-      color: var(--body);
-    }
-
-    /* ---------- Capabilities — interactive segmented pillars (in hero) ---------- */
-    .pillars {
-      margin: 26px 0 0;
-      text-align: center;
-    }
-    .seg {
-      display: inline-flex;
-      gap: 4px;
-      padding: 5px;
-      background: var(--soft);
-      border: 1px solid var(--border);
-      border-radius: 30px;
-    }
-    .seg__btn {
-      appearance: none;
-      -webkit-appearance: none;
-      border: none;
-      background: transparent;
-      padding: 10px 26px;
-      border-radius: 24px;
-      font-family: inherit;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      color: var(--muted);
-      cursor: pointer;
-      transition: color 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
-    }
-    .seg__btn:hover { color: var(--ink-2); }
-    .seg__btn.is-active {
-      background: var(--card);
-      color: var(--ink);
-      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
-    }
-    .pillars__copy {
-      margin: 24px auto 0;
-      max-width: 440px;
-      min-height: 50px;
-      font-size: clamp(15px, 2vw, 18px);
-      line-height: 1.45;
-      color: var(--body);
-      text-wrap: balance;
-      transition: opacity 0.22s ease, transform 0.22s ease;
-    }
-    .pillars__copy.is-anim {
-      opacity: 0;
-      transform: translateY(6px);
-    }
-
-    /* ---------- Footer ---------- */
-    footer {
-      flex-shrink: 0;
-      border-top: 1px solid var(--border);
-      padding: 26px 0;
-    }
-    .foot {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-    .foot__links { display: flex; gap: 20px; }
-    .foot__links a { color: var(--muted); font-weight: 500; }
-    .foot__links a:hover { color: var(--ink-2); }
-
-    /* ---------- Responsive ---------- */
-    @media (max-width: 560px) {
-      .form { padding: 0 10px; }
-      .details { padding-left: 10px; padding-right: 10px; }
-      .row { flex-direction: column; gap: 12px; }
-      .btn { width: auto; align-self: center; padding: 0 40px; }
-      .seg__btn { padding: 10px 20px; }
-      .foot { justify-content: center; text-align: center; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      * { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+    @media (max-width: 420px) {
+      h1 { font-size: 40px; }
+      .icon { width: 92px; height: 92px; border-radius: 21px; }
+      .store--apple img { height: 48px; }
+      .store--google img { height: 71px; }
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <div class="wrap nav">
-      <span class="wordmark">Elunimy</span>
-      <span class="nav__tag">Coming soon</span>
-    </div>
-  </header>
+  <a class="support" href="https://legal.elunimy.com/support.html">Support</a>
 
   <main>
-    <section class="wrap hero">
-      <span class="eyebrow">Limited early access</span>
+    <img class="icon" src="assets/icon.png" alt="Elunimy app icon" width="104" height="104">
 
-      <h1>Elunimy</h1>
+    <h1>Elunimy</h1>
+    <p class="tagline">Save anything. Find by meaning.</p>
 
-      <div class="pillars">
-        <div class="seg" role="tablist" aria-label="What Elunimy does">
-          <button class="seg__btn is-active" type="button" role="tab" aria-selected="true" data-i="0">Save</button>
-          <button class="seg__btn" type="button" role="tab" aria-selected="false" data-i="1">Edit</button>
-          <button class="seg__btn" type="button" role="tab" aria-selected="false" data-i="2">Find</button>
-        </div>
-        <p class="pillars__copy" id="pillar-copy" aria-live="polite">Notes, links, and files — kept in one place.</p>
-      </div>
+    <p class="desc">
+      Your personal home for everything worth keeping - notes, links, documents and photos.
+      Find any of them later by meaning, not just the exact words you remember.
+    </p>
 
-      <!-- Waitlist form -->
-      <form class="form" id="waitlist-form" novalidate>
-        <div class="row">
-          <input
-            class="field"
-            type="email"
-            id="email"
-            name="email"
-            placeholder="you@example.com"
-            autocomplete="email"
-            inputmode="email"
-            required
-            aria-label="Email address">
-          <button class="btn" type="submit" id="submit" data-label="Join the waitlist">Join the waitlist</button>
-        </div>
-
-        <!-- honeypot: real users never see or fill this -->
-        <div class="hp" aria-hidden="true">
-          <label>Company<input type="text" id="company" name="company" tabindex="-1" autocomplete="off"></label>
-        </div>
-
-        <div class="consent">
-          <input type="checkbox" id="consent" name="consent">
-          <label for="consent">
-            I agree to receive occasional email updates about Elunimy. No spam, unsubscribe
-            anytime. See our <a href="https://legal.elunimy.com/privacy-policy.html">Privacy Policy</a>.
-          </label>
-        </div>
-
-        <p class="status" id="status" role="status" aria-live="polite"></p>
-        <p class="microcopy">One email when we open the doors. Nothing else.</p>
-      </form>
-
-      <!-- Success state (revealed after a successful submit) -->
-      <div class="success" id="success" hidden>
-        <div class="success__check" aria-hidden="true">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
-            <path d="M5 12.5l4.2 4.2L19 7" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h2>You're on the list.</h2>
-        <p id="success-line">We'll email you the moment Elunimy opens. Thanks for being early.</p>
-      </div>
-    </section>
-
-    <!-- Details — fuller description for those who scroll down -->
-    <section class="wrap details">
-      <h2 class="details__title">Your personal search base.</h2>
-      <p class="details__lead">
-        Turn forgetting, searching, and noise into clarity. Save notes, links, and files,
-        then find any of them by meaning — even when you forget the exact words.
-        What you saved is never more than a thought away.
-      </p>
-      <ul class="details__list">
-        <li>One home for everything you save — no more scattered tabs.</li>
-        <li>Search the way you think — by meaning, not exact keywords.</li>
-        <li>Nothing slips away — recall it weeks or years later.</li>
-        <li>One workspace. Everything you saved — nothing you didn't.</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap foot">
-      <span>© 2026 Elunimy</span>
-      <span class="foot__links">
-        <a href="https://legal.elunimy.com/privacy-policy.html">Privacy Policy</a>
-        <a href="https://legal.elunimy.com/terms-and-conditions.html">Terms</a>
-      </span>
+    <div class="stores">
+      <a class="store store--apple"
+         href="https://apps.apple.com/app/elunimy/id6763498630"
+         aria-label="Download Elunimy on the App Store">
+        <img src="assets/app-store-badge.svg" alt="Download on the App Store">
+      </a>
+      <a class="store store--google"
+         href="https://play.google.com/store/apps/details?id=com.elunimy.app"
+         aria-label="Get Elunimy on Google Play">
+        <img src="assets/google-play-badge.png" alt="Get it on Google Play">
+      </a>
     </div>
-  </footer>
 
-  <script src="config.js"></script>
-  <script src="app.js" defer></script>
+    <footer>
+      <a href="https://legal.elunimy.com/privacy-policy.html">Privacy</a>
+      <span class="dot">·</span>
+      <a href="https://legal.elunimy.com/terms-and-conditions.html">Terms</a>
+    </footer>
+  </main>
 </body>
 </html>
